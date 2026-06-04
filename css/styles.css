@@ -14,14 +14,15 @@
         font-family: Montserrat;
         color: #2C3E50;
         background-color: #FDF6E3;
-        font-size: clamp(0.93rem, 0.2vw + 0.85rem, 1.06rem);
+        font-size: clamp(0.95rem, 0.3vw + 0.85rem, 1.05rem);
         line-height: 1.6;
     }
 
     h2 {
         color: #D35400; 
-        font-size: clamp(1.4rem, 2.5vw, 2.2rem);
+        font-size: clamp(1.65rem, 4vw + 0.5rem, 2.2rem);
     }
+    
 
 
     #hero {
@@ -49,9 +50,9 @@
     #hero-title {
         padding: 7px;
         margin: 0 auto;
-        font-size: clamp(1.5rem, 4vw, 2.5rem);
+        font-size: clamp(1.9rem, 5vw + 0.8rem, 2.5rem);
         width: 90%; /* Hero always try to take 90% of the parent container width, this is important when we try to display it on mobile/tablets to be displayed in beautiful way */
-        max-width: 250px; /* Hero tries to take 90% of the screen width but it's limited to 250px , this is important for large screens to be displayed in beautiful way */
+        max-width: 300px; /* Hero tries to take 90% of the screen width but it's limited to 250px , this is important for large screens to be displayed in beautiful way */
         text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); /* last value Opacity: This determines how much of the background "blends with the object shadow" */
         background-color: rgba(255, 165, 0, 0.4); /* last value Opacity: This determines how much of the background "blends with the object background" */
         border-radius: 10px;
@@ -62,7 +63,7 @@
     #hero-subtitle {
         padding: 7px;
         margin: 0 auto clamp(10px, 3vw, 40px) auto;
-        font-size: clamp(0.85rem, 1.8vw, 1.3rem);
+        font-size: clamp(1.05rem, 2vw + 0.8rem, 1.35rem);
         width: 90%;
         max-width: 700px;
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); 
@@ -147,6 +148,7 @@
 
         #activities-wrapper {
             flex-direction: column;
+            gap: 35px;
         }
 
         #profile-card {
@@ -156,6 +158,11 @@
         #guide-box {
             padding-left: 0;
             margin: 15px 5px 0px 5px;
+        }
+
+        .activity-card p, #guide-box p {
+            font-size: 0.95rem;
+            opacity: 0.9; /* Subtle opacity drop makes the bold black h3 jump out more */
         }
     }
 
