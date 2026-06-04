@@ -140,6 +140,11 @@
 
     @media(max-width: 768px) {
 
+        #hero {            
+            aspect-ratio: 1.2 / 1; 
+            background-position: center 40%; 
+        }
+
         #activities-wrapper {
             flex-direction: column;
         }
@@ -154,14 +159,6 @@
         }
     }
 
-    @media(max-width: 1024px) {
-        #hero {
-            /* Makes the container much wider and shorter so height stays low */
-            aspect-ratio: 1.2 / 1; 
-            /* Adjust percentage if you want to shift the image up or down when it crops */
-            background-position: center 40%; 
-        }
-    }
     
 
 
