@@ -30,7 +30,7 @@
         background-position: center;
         background-repeat: no-repeat;
         padding: clamp(15px, 3vw, 65px) 0;
-        aspect-ratio: 2.5 / 1;
+        aspect-ratio: 2.4 / 1;
         width: 100%;     
         /* min-height: 80vh; Hero  section will be at least 80% of the screen height. If it's content is small, it will stretch to 80%. But if it's content is huge, it will expand further so nothing gets cut off */
         color: #FFFDD0;
