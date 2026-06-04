@@ -28,11 +28,11 @@
         background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(../images/Egypt.jpg); /* Creates a semi-transparent black overlay using a gradient from black to black with 20% opacity. This darkens the background image slightly, improving contrast and making foreground text easier to read. */ 
         background-size: cover; /* Forces the image width to fit the screen 100% */
         background-position: center;
+
         padding: clamp(15px, 3vw, 65px) 0;
         aspect-ratio: 2.4 / 1;
-        min-height: 400px; /* Stops it from getting too short on mobile */
-        max-height: 500px; /* Stops it from getting insanely tall on desktop */
         width: 100%;     
+
         /* min-height: 80vh; Hero  section will be at least 80% of the screen height. If it's content is small, it will stretch to 80%. But if it's content is huge, it will expand further so nothing gets cut off */
         color: #FFFDD0;
         display: flex;
@@ -153,6 +153,16 @@
             margin: 15px 5px 0px 5px;
         }
     }
+
+    @media(min-width: 1024px) {
+        #hero {
+            /* Makes the container much wider and shorter so height stays low */
+            aspect-ratio: 2.8 / 1; 
+            /* Adjust percentage if you want to shift the image up or down when it crops */
+            background-position: center 40%; 
+        }
+    }
+    
 
 
 
