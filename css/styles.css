@@ -154,10 +154,10 @@
         }
     }
 
-    @media(min-width: 1024px) {
+    @media(max-width: 1024px) {
         #hero {
             /* Makes the container much wider and shorter so height stays low */
-            aspect-ratio: 2.8 / 1; 
+            aspect-ratio: 1.2 / 1; 
             /* Adjust percentage if you want to shift the image up or down when it crops */
             background-position: center 40%; 
         }
