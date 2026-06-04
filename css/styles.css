@@ -14,24 +14,31 @@
         font-family: Montserrat;
         color: #2C3E50;
         background-color: #FDF6E3;
+        font-size: clamp(0.93rem, 0.2vw + 0.85rem, 1.06rem);
+        line-height: 1.6;
     }
 
     h2 {
         color: #D35400; 
+        font-size: clamp(1.4rem, 2.5vw, 2.2rem);
     }
 
 
     #hero {
         background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(../images/Egypt.jpg); /* Creates a semi-transparent black overlay using a gradient from black to black with 20% opacity. This darkens the background image slightly, improving contrast and making foreground text easier to read. */ 
-        background-size: cover;
+        background-size: cover; /* Forces the image width to fit the screen 100% */
         background-position: center;
+        background-repeat: no-repeat;
+        padding: clamp(15px, 3vw, 65px) 0;
+        aspect-ratio: 2.5 / 1;
         width: 100%;     
-        min-height: 80vh; /* Hero  section will be at least 80% of the screen height. If it's content is small, it will stretch to 80%. But if it's content is huge, it will expand further so nothing gets cut off */
+        /* min-height: 80vh; Hero  section will be at least 80% of the screen height. If it's content is small, it will stretch to 80%. But if it's content is huge, it will expand further so nothing gets cut off */
         color: #FFFDD0;
         display: flex;
         flex-direction: column;
         justify-content: center; 
         align-items: center;    
+
     }
 
     #content-wrapper {
@@ -41,6 +48,7 @@
     #hero-title {
         padding: 7px;
         margin: 0 auto;
+        font-size: clamp(1.5rem, 4vw, 2.5rem);
         width: 90%; /* Hero always try to take 90% of the parent container width, this is important when we try to display it on mobile/tablets to be displayed in beautiful way */
         max-width: 250px; /* Hero tries to take 90% of the screen width but it's limited to 250px , this is important for large screens to be displayed in beautiful way */
         text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); /* last value Opacity: This determines how much of the background "blends with the object shadow" */
@@ -52,7 +60,8 @@
 
     #hero-subtitle {
         padding: 7px;
-        margin: 0 auto 100px auto;
+        margin: 0 auto clamp(10px, 3vw, 40px) auto;
+        font-size: clamp(0.85rem, 1.8vw, 1.3rem);
         width: 90%;
         max-width: 700px;
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); 
@@ -71,7 +80,7 @@
     #activities-header {
         margin: 40px auto;
         width: 94%;
-        max-width: 500px;
+        max-width: 800px;
     }
 
     #activities-wrapper {
@@ -124,18 +133,11 @@
         transform: translateY(-4px); /* Moves the element 4px upward along the Y-axis */
     }
 
+    
     /* @media(max-width: 768px) applies only when the viewport width is 768px or smaller. This breakpoint commonly targets tablets and mobile devices. */
     /* The properties defined here override previously declared values for the same elements, while all other properties continue to use their existing styles. */
 
     @media(max-width: 768px) {
-        
-        #hero{
-            min-height: 65vh;
-        }
-
-        #hero-subtitle {
-            font-size: 0.9rem;
-        }
 
         #activities-wrapper {
             flex-direction: column;
@@ -149,5 +151,8 @@
             padding-left: 0;
             margin: 15px 5px 0px 5px;
         }
-
     }
+
+
+
+
