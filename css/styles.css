@@ -161,7 +161,7 @@
         }
 
         .activity-card p, #guide-box p {
-            font-size: 1.2rem;
+            font-size: 0.9rem;
             opacity: 0.9; /* Subtle opacity drop makes the bold black h3 jump out more */
         }
     }
