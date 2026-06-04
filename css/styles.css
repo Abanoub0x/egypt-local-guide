@@ -130,7 +130,7 @@
     @media(max-width: 768px) {
         
         #hero{
-            min-height: 40vh;
+            min-height: 65vh;
         }
 
         #hero-subtitle {
