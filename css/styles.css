@@ -28,9 +28,8 @@
         background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(../images/Egypt.jpg); /* Creates a semi-transparent black overlay using a gradient from black to black with 20% opacity. This darkens the background image slightly, improving contrast and making foreground text easier to read. */ 
         background-size: cover; /* Forces the image width to fit the screen 100% */
         background-position: center;
-        background-repeat: no-repeat;
         padding: clamp(15px, 3vw, 65px) 0;
-        aspect-ratio: 2 / 1;
+        aspect-ratio: 2.4 / 1;
         width: 100%;     
         /* min-height: 80vh; Hero  section will be at least 80% of the screen height. If it's content is small, it will stretch to 80%. But if it's content is huge, it will expand further so nothing gets cut off */
         color: #FFFDD0;
