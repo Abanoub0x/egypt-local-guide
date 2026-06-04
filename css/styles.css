@@ -150,6 +150,10 @@
             background-position: center 40%; 
         }
 
+        #hero-title {
+            width: 70%;
+        }
+
         #activities-wrapper {
             flex-direction: column;
             gap: 35px;
