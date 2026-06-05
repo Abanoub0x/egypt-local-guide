@@ -1,180 +1,191 @@
 
-    @font-face {
-        font-family: Montserrat;
-        src: url(../fonts/Montserrat/Montserrat-VariableFont_wght.ttf);
-    }
+@font-face {
+    font-family: Montserrat;
+    src: url(../fonts/Montserrat/Montserrat-VariableFont_wght.ttf);
+}
 
-    @font-face {
-        font-family: Playfair;
-        src: url(../fonts/Playfair_Display/PlayfairDisplay-VariableFont_wght.ttf);
-    }
+@font-face {
+    font-family: Playfair;
+    src: url(../fonts/Playfair_Display/PlayfairDisplay-VariableFont_wght.ttf);
+}
 
-    body {
-        margin: 0px;
-        font-family: Montserrat;
-        color: #2C3E50;
-        background-color: #FDF6E3;
-        font-size: clamp(0.95rem, 0.3vw + 0.85rem, 1.05rem);
-        line-height: 1.6;
-    }
+body {
+    margin: 0px;
+    font-family: Montserrat;
+    color: #2C3E50;
+    background-color: #FDF6E3;
+    /* clamp(min, preferred, max)
 
-    h2 {
-        color: #D35400; 
-        font-size: clamp(1.65rem, 4vw + 0.5rem, 2.2rem);
-    }
+    - 1rem = the root font size (16px by default)
+    - 1vw = 1% of the viewport (browser window) width.
 
-    h3{
-        font-size: clamp(1.1rem, 2vw + 0.6rem, 1.5rem);
-        font-weight: 700;
-    }
-    
+    Values:
+    - 0.95rem → Minimum font size. The text will never become smaller than this even if the browser width got smaller.
+    - 0.3vw + 0.85rem → Preferred font size. Combines a fixed base size (0.85rem) with a viewport-based value (0.3vw),
+      allowing the text to scale smoothly as the screen width changes.
+    - 1.05rem → Maximum font size. The text will never become larger than this even if the browser width got bigger.
 
-    #hero {
-        background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(../images/Egypt.jpg); /* Creates a semi-transparent black overlay using a gradient from black to black with 20% opacity. This darkens the background image slightly, improving contrast and making foreground text easier to read. */ 
-        background-size: cover; /* Forces the image width to fit the screen 100% */
-        background-position: center;
+    Result:
+    The font size remains responsive across different screen sizes without while staying within readable minimum and maximum limits. */
+    font-size: clamp(0.95rem, 0.3vw + 0.85rem, 1.05rem);
+    line-height: 1.6; /* Sets the height of each line to 1.6 times the font size, improving readability and text spacing. */
+}
 
-        padding: clamp(15px, 3vw, 65px) 0;
-        aspect-ratio: 3 / 1;
-        width: 100%;     
+h2 {
+    color: #D35400; 
+    font-size: clamp(1.65rem, 4vw + 0.5rem, 2.2rem);
+}
 
-        /* min-height: 80vh; Hero  section will be at least 80% of the screen height. If it's content is small, it will stretch to 80%. But if it's content is huge, it will expand further so nothing gets cut off */
-        color: #FFFDD0;
-        display: flex;
-        flex-direction: column;
-        justify-content: center; 
-        align-items: center;    
+h3{
+    font-size: clamp(1.1rem, 2vw + 0.6rem, 1.5rem);
+    font-weight: 700;
+}
 
-    }
 
-    #content-wrapper {
-        text-align: center;   
+#hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(../images/Egypt.jpg); /* Creates a semi-transparent black overlay using a gradient from black to black with 20% opacity. This darkens the background image slightly, improving contrast and making foreground text easier to read. */ 
+    background-size: cover; /* Forces the image width to fit the screen 100% */
+    background-position: center;
+
+    padding: clamp(15px, 3vw, 65px) 0; /*top down: clamp(15px, 3vw, 65px), left right: 0 */
+    aspect-ratio: 3 / 1; /* Maintains a width-to-height ratio of 3:1. The browser automatically adjusts the height based on the element's width to preserve the hero size as screen grow or shrink. */
+    width: 100%;     
+
+    /* min-height: 80vh; Hero section will be at least 80% of the screen height. If it's content is small, it will stretch to 80%. But if it's content is huge, it will expand further so nothing gets cut off */
+    color: #FFFDD0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;    
+}
+
+#content-wrapper {
+    text-align: center;   
+}
+
+#hero-title {
+    padding: 7px;
+    margin: 0 auto;
+    font-size: clamp(1.9rem, 5vw + 0.8rem, 2.5rem);
+    width: 90%; /* Hero always try to take 90% of the parent container width, this is important when we try to display it on mobile/tablets to be displayed in beautiful way */
+    max-width: 300px; /* Hero tries to take 90% of the screen width but it's limited to 250px , this is important for large screens to be displayed in beautiful way */
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); /* last value Opacity: This determines how much of the background "blends with the object shadow" */
+    background-color: rgba(255, 165, 0, 0.4); /* last value Opacity: This determines how much of the background "blends with the object background" */
+    border-radius: 10px;
+    margin-bottom: 15px;
+    font-family: Montserrat;
+}
+
+#hero-subtitle {
+    padding: 7px;
+    margin: 0 auto clamp(10px, 3vw, 40px) auto;
+    font-size: clamp(0.85rem, 4vw, 1.35rem);
+    width: 90%;
+    max-width: 700px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); 
+    font-weight: 500;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    font-family: Playfair;
+}
+
+#activities {
+    background-color:#FDF6E3;
+    text-align: center;          
+    padding: 0px;
+}
+
+#activities-header {
+    margin: 40px auto;
+    width: 94%;
+    max-width: 800px;
+}
+
+#activities-wrapper {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 50px;
+    gap: 10px; /* Similar to using margins to create space between elements, but gap is applied to the parent container and automatically adds spacing between all flex children, whereas margins must be applied to individual children to create spacing between them. */
+}
+
+.activity-card {
+    padding: 15px; 
+}
+
+.img {
+    width: 240px;
+    height: 220px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+#profile-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 20px auto;
+    width: 95%;
+    max-width: 600px; 
+    border-radius: 10px;
+    background-color: #F2EDE1;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+
+    /* 
+    - background-color: Starts at a value of light cream (#F2EDE1). After 0.15 seconds, the browser mathematically calculates and renders a perfect halfway color blend, before settling on its final rich sand value (#EADFC9) at exactly 0.3 seconds.
+    - box-shadow: Starts at a value of a tight, faint shadow (5px blur with 0.2 opacity). After 0.15 seconds, it expands smoothly through a middle state, before easing to its final value of a deeper, wider shadow (30px blur with 0.4 opacity) at exactly 0.3 seconds.
+    - transform: Starts at a value of 0px (flat on the screen). After 0.15 seconds, it utilizes the 'ease' curve to accelerate quickly through a vertical midpoint of 2px, before gently slowing down to cushion into its final value of a 4px uplift at exactly 0.3 seconds.
+    */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+#guide-box {
+    padding-left: 20px;
+}
+
+#profile-card:hover {
+    background-color:#EADFC9;
+    box-shadow: 10px 15px 30px rgba(0, 0, 0, 0.4); 
+    transform: translateY(-4px); /* Moves the element 4px upward along the Y-axis */
+}
+
+
+/* @media(max-width: 768px) applies only when the viewport width is 768px or smaller. This breakpoint commonly targets tablets and mobile devices. */
+/* The properties defined here override previously declared values for the same elements, while all other properties continue to use their existing styles. */
+
+@media(max-width: 768px) {
+
+    #hero {            
+        aspect-ratio: 1.2 / 1;  
     }
 
     #hero-title {
-        padding: 7px;
-        margin: 0 auto;
-        font-size: clamp(1.9rem, 5vw + 0.8rem, 2.5rem);
-        width: 90%; /* Hero always try to take 90% of the parent container width, this is important when we try to display it on mobile/tablets to be displayed in beautiful way */
-        max-width: 300px; /* Hero tries to take 90% of the screen width but it's limited to 250px , this is important for large screens to be displayed in beautiful way */
-        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); /* last value Opacity: This determines how much of the background "blends with the object shadow" */
-        background-color: rgba(255, 165, 0, 0.4); /* last value Opacity: This determines how much of the background "blends with the object background" */
-        border-radius: 10px;
-        margin-bottom: 15px;
-        font-family: Montserrat;
-    }
-
-    #hero-subtitle {
-        padding: 7px;
-        margin: 0 auto clamp(10px, 3vw, 40px) auto;
-        font-size: clamp(0.85rem, 4vw, 1.35rem);
-        width: 90%;
-        max-width: 700px;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); 
-        font-weight: 500;
-        background-color: rgba(0, 0, 0, 0.5);
-        border-radius: 10px;
-        font-family: Playfair;
-    }
-
-    #activities {
-        background-color:#FDF6E3;
-        text-align: center;          
-        padding: 0px;
-    }
-
-    #activities-header {
-        margin: 40px auto;
-        width: 94%;
-        max-width: 800px;
+        width: 70%;
     }
 
     #activities-wrapper {
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        margin-bottom: 50px;
-        gap: 10px; /* Similar to using margins to create space between elements, but gap is applied to the parent container and automatically adds spacing between all flex children, whereas margins must be applied to individual children to create spacing between them. */
-    }
-
-    .activity-card {
-        padding: 15px; 
-    }
-
-    .img {
-        width: 240px;
-        height: 220px;
-        border-radius: 50%;
-        object-fit: cover;
+        flex-direction: column;
+        gap: 35px;
     }
 
     #profile-card {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        margin: 20px auto;
-        width: 95%;
-        max-width: 600px; 
-        border-radius: 10px;
-        background-color: #F2EDE1;
-        box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
-        padding: 10px;
-        
-        /* 
-        - background-color: Starts at a value of light cream (#F2EDE1). After 0.15 seconds, the browser mathematically calculates and renders a perfect halfway color blend, before settling on its final rich sand value (#EADFC9) at exactly 0.3 seconds.
-        - box-shadow: Starts at a value of a tight, faint shadow (5px blur with 0.2 opacity). After 0.15 seconds, it expands smoothly through a middle state, before easing to its final value of a deeper, wider shadow (30px blur with 0.4 opacity) at exactly 0.3 seconds.
-        - transform: Starts at a value of 0px (flat on the screen). After 0.15 seconds, it utilizes the 'ease' curve to accelerate quickly through a vertical midpoint of 2px, before gently slowing down to cushion into its final value of a 4px uplift at exactly 0.3 seconds.
-        */
-        transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+        flex-direction: column;
     }
 
     #guide-box {
-        padding-left: 20px;
+        padding-left: 0;
+        margin: 15px 5px 0px 5px;
     }
 
-    #profile-card:hover {
-        background-color:#EADFC9;
-        box-shadow: 10px 15px 30px rgba(0, 0, 0, 0.4); 
-        transform: translateY(-4px); /* Moves the element 4px upward along the Y-axis */
+    .activity-card h2, h3, #guide-box h2, h3 {
+        font-size: 0.95rem;
+        opacity: 0.9; 
     }
+}
 
-    
-    /* @media(max-width: 768px) applies only when the viewport width is 768px or smaller. This breakpoint commonly targets tablets and mobile devices. */
-    /* The properties defined here override previously declared values for the same elements, while all other properties continue to use their existing styles. */
 
-    @media(max-width: 768px) {
-
-        #hero {            
-            aspect-ratio: 1.2 / 1; 
-            background-position: center 40%; 
-        }
-
-        #hero-title {
-            width: 70%;
-        }
-
-        #activities-wrapper {
-            flex-direction: column;
-            gap: 35px;
-        }
-
-        #profile-card {
-            flex-direction: column;
-        }
-
-        #guide-box {
-            padding-left: 0;
-            margin: 15px 5px 0px 5px;
-        }
-
-        .activity-card p, #guide-box p {
-            font-size: 0.95rem;
-            opacity: 0.9; /* Subtle opacity drop makes the bold black h3 jump out more */
-        }
-    }
-
-    
 
 
 
