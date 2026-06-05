@@ -47,7 +47,7 @@ h3{
     background-size: cover; /* Forces the image width to fit the screen 100% */
     background-position: center;
 
-    padding: clamp(15px, 3vw, 65px) 0; /*top down: clamp(15px, 3vw, 65px), left right: 0 */
+    padding: clamp(15px, 3vw, 65px) 0; /*top down: clamp(15px, 3vw, 65px), left right: 0. We use padding here to grow image size from top-button proportional to the width of screen*/
     aspect-ratio: 3 / 1; /* Maintains a width-to-height ratio of 3:1. The browser automatically adjusts the height based on the element's width to preserve the hero size as screen grow or shrink. */
     width: 100%;     
 
