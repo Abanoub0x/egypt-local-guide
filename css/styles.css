@@ -179,7 +179,7 @@ h3{
         margin: 15px 5px 0px 5px;
     }
 
-    .activity-card h3, #guide-box h3 {
+    .activity-card h3 {
         font-size: 0.95rem;
         opacity: 0.9; 
     }
