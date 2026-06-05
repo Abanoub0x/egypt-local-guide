@@ -104,7 +104,7 @@ h3{
 #activities-wrapper {
     display: flex;
     justify-content: space-around;
-    align-items: center;
+    align-items: flex-start; /* Make sure that the very top edge of of each coulmn is aligned */
     margin-bottom: 50px;
     gap: 10px; /* Similar to using margins to create space between elements, but gap is applied to the parent container and automatically adds spacing between all flex children, whereas margins must be applied to individual children to create spacing between them. */
 }
@@ -167,7 +167,9 @@ h3{
 
     #activities-wrapper {
         flex-direction: column;
+        align-items: center;
         gap: 35px;
+        flex-wrap: wrap; /* Drops overflowing flexitems down to a new line cleanly. */
     }
 
     #profile-card {
