@@ -106,7 +106,7 @@ h3{
     justify-content: space-around;
     align-items: flex-start; /* Make sure that the very top edge of of each coulmn is aligned */
     margin-bottom: 50px;
-    gap: 10px; /* Similar to using margins to create space between elements, but gap is applied to the parent container and automatically adds spacing between all flex children, whereas margins must be applied to individual children to create spacing between them. */
+    gap: 10px; /* Similar to using margins to create space between elements, but gap is applied to the parent container and automatically adds spacing between all children, whereas margins must be applied to individual children to create spacing between them. */
 }
 
 .activity-card {
