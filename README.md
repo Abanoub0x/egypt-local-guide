@@ -6,7 +6,7 @@ A responsive web application showcasing Egypt's iconic landmarks, cultural attra
 
 ## 🚀 Live Demo
 
-* **Production URL:** https://egyptlocalguide.netlify.app/
+* **Production URL:** https://egypt-local-guide.pages.dev/
 * **Repository Link:** https://github.com/Abanoub0x/egypt-local-guide
 
 ---
