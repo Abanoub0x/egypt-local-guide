@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://egypt-local-guide.pages.dev/sitemap.xml
